@@ -6,55 +6,61 @@ using System.Threading.Tasks;
 
 namespace BookSuggester.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Book>
     {
-        readonly List<Item> items;
+        readonly List<Book> books;
 
         public MockDataStore()
         {
-            items = new List<Item>()
+            books = new List<Book>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Book { ISBN = Guid.NewGuid().ToString(), AuthorID = 1, Title="This is an item description." },
+                new Book { ISBN = Guid.NewGuid().ToString(), AuthorID = 1, Title="This is an item description." },
+                new Book { ISBN = Guid.NewGuid().ToString(), AuthorID = 1, Title="This is an item description." },
+                new Book { ISBN = Guid.NewGuid().ToString(), AuthorID = 1, Title="This is an item description." },
+                new Book { ISBN = Guid.NewGuid().ToString(), AuthorID = 1, Title="This is an item description." },
+                new Book { ISBN = Guid.NewGuid().ToString(), AuthorID = 1, Title="This is an item description." }
             };
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddBookAsync(Book book)
         {
-            items.Add(item);
+            books.Add(book);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateBookAsync(Book book)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            var oldBook = books.Where((Book arg) => arg.ISBN == book.ISBN).FirstOrDefault();
+            books.Remove(oldBook);
+            books.Add(book);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteBookAsync(string isbn)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            var oldBook = books.Where((Book arg) => arg.ISBN == isbn).FirstOrDefault();
+            books.Remove(oldBook);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Book> GetBookAsync(string isbn)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(books.FirstOrDefault(s => s.ISBN == isbn));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Book>> GetBookAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(books);
+        }
+
+        public async Task<IEnumerable<Book>> GetBooksAsync(bool forceRefresh = false)
+        {
+            return await Task.FromResult(books);
+            //throw new NotImplementedException();
         }
     }
 }

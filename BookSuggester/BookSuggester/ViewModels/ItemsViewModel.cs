@@ -10,20 +10,20 @@ namespace BookSuggester.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private Book _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<Book> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<Book> ItemTapped { get; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Book>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<Book>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -35,7 +35,7 @@ namespace BookSuggester.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await DataStore.GetBooksAsync(true);
                 foreach (var item in items)
                 {
                     Items.Add(item);
@@ -57,7 +57,7 @@ namespace BookSuggester.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public Book SelectedItem
         {
             get => _selectedItem;
             set
@@ -72,13 +72,13 @@ namespace BookSuggester.ViewModels
             await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(Book item)
         {
             if (item == null)
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(BookDetailViewModel.BookId)}={item.ISBN}");
         }
     }
 }

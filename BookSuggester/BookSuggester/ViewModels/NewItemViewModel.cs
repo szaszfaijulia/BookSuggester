@@ -9,7 +9,7 @@ namespace BookSuggester.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string text;
+       /* private string text;
         private string description;
 
         public NewItemViewModel()
@@ -49,7 +49,7 @@ namespace BookSuggester.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            Book newItem = new Book()
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
@@ -60,6 +60,6 @@ namespace BookSuggester.ViewModels
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
-        }
+        }*/
     }
 }

@@ -9,10 +9,10 @@ namespace BookSuggester.ViewModels
     {
         public MainViewModel()
         {
-            Title = "Main";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
+            Title = "Kezdőlap";
+            //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 
-        public ICommand OpenWebCommand { get; }
+        //public ICommand OpenWebCommand { get; }
     }
 }

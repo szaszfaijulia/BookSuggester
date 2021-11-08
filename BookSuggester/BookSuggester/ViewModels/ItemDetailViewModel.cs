@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace BookSuggester.ViewModels
 {
-    [QueryProperty(nameof(ItemId), nameof(ItemId))]
+    /*[QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ItemDetailViewModel : BaseViewModel
     {
         private string itemId;
@@ -53,5 +53,5 @@ namespace BookSuggester.ViewModels
                 Debug.WriteLine("Failed to Load Item");
             }
         }
-    }
+    }*/
 }
