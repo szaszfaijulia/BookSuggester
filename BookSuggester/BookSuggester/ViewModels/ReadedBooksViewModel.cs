@@ -69,7 +69,7 @@ namespace BookSuggester.ViewModels
 
         private async void OnAddBook(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewBookPage));
+            await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
         async void OnBookSelected(Book book)

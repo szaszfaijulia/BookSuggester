@@ -5,19 +5,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BookSuggester.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+
+            <Label FontSize="Title"
+                   HorizontalOptions="Center"
+                   Margin="25"
+                   Text="Bejelentkezés"/>
+
+            <!-- Bejelentkezés -->
             <Label Text="Email cím:"/>
             <Entry Placeholder="Email cím"/>
             <Label Text="Jelszó:"/>
             <Entry IsPassword="True" Placeholder="Jelszó"/>
             <Button Text="Bejelentkezés" Clicked="Button_Clicked"/>
-            <Label Text="Regisztráció" HorizontalOptions="Center">
+
+            <!-- Regisztráció -->
+            <Label Text="Regisztráció"
+                   HorizontalOptions="Center"
+                   Margin="15"
+                   TextDecorations="Underline">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

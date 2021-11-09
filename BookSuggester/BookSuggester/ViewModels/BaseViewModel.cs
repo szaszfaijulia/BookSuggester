@@ -19,8 +19,8 @@ namespace BookSuggester.ViewModels
             set { SetProperty(ref isBusy, value); }
         }
 
-        string title = string.Empty;
-        public string Title
+        string title = string.Empty; //data binding
+        public string Title //data binding
         {
             get { return title; }
             set { SetProperty(ref title, value); }
@@ -41,7 +41,7 @@ namespace BookSuggester.ViewModels
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "") //data binding
         {
             var changed = PropertyChanged;
             if (changed == null)
