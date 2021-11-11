@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace BookSuggester.ViewModels
 {
-    class ReadedBooksViewModel : BaseViewModel
+    public class ReadedBooksViewModel : BaseViewModel
     {
         private Book _selectedBook;
 
@@ -19,7 +19,7 @@ namespace BookSuggester.ViewModels
 
         public ReadedBooksViewModel()
         {
-            Title = "Browse";
+            Title = "Olvasott könyvek";
             Books = new ObservableCollection<Book>();
             LoadBooksCommand = new Command(async () => await ExecuteLoadBooksCommand());
 

@@ -7,27 +7,24 @@
              x:Class="BookSuggester.Views.LoginPage"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
-             Shell.TabBarIsVisible="False">
+             Shell.TabBarIsVisible="False"
+             BackgroundImage="bookshelf.jpg">
     <ContentPage.Content>
         <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
 
-            <Label FontSize="Title"
-                   HorizontalOptions="Center"
-                   Margin="25"
-                   Text="Bejelentkezés"/>
+            <Label FontSize="30" HorizontalOptions="Center" TextColor="White"
+                   Margin="0,0,0,45" Text="Bejelentkezés" FontAttributes="Bold"/>
 
             <!-- Bejelentkezés -->
-            <Label Text="Email cím:"/>
-            <Entry Placeholder="Email cím"/>
-            <Label Text="Jelszó:"/>
-            <Entry IsPassword="True" Placeholder="Jelszó"/>
-            <Button Text="Bejelentkezés" Clicked="Button_Clicked"/>
+            <Label Text="Email cím:" TextColor="White" FontAttributes="Bold"/>
+            <Entry Placeholder="Email cím" TextColor="Black" PlaceholderColor="Gray" FontAttributes="Bold" BackgroundColor="white"/>
+            <Label Text="Jelszó:" TextColor="White" FontAttributes="Bold"/>
+            <Entry IsPassword="True" Placeholder="Jelszó" TextColor="Black" PlaceholderColor="Gray" FontAttributes="Bold" BackgroundColor="white"/>
+            <Button Text="Bejelentkezés" FontSize="16" Clicked="Button_Clicked" Margin="0,15,0,15" FontAttributes="Bold"/>
 
             <!-- Regisztráció -->
-            <Label Text="Regisztráció"
-                   HorizontalOptions="Center"
-                   Margin="15"
-                   TextDecorations="Underline">
+            <Label Text="Regisztráció" HorizontalOptions="Center" Margin="15"
+                   TextColor="White" TextDecorations="Underline" FontSize="15">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Label.GestureRecognizers>

@@ -15,12 +15,12 @@ namespace BookSuggester.Services
             books = new List<Book>()
             {
                 //new Book { ISBN = Guid.NewGuid().ToString(), AuthorID = 1, Title="Ez egy könyv cím" },
-                new Book { ISBN = "1111111111111", AuthorID = 1, Title="Ez egy könyv cím" },
-                new Book { ISBN = "2222222222222", AuthorID = 1, Title="Másik könyv cím" },
-                new Book { ISBN = "333333333", AuthorID = 1, Title="Harmadik cím" },
-                new Book { ISBN = "4444444444444", AuthorID = 1, Title="Negyedik könyvnek a címe" },
-                new Book { ISBN = "5555555555555", AuthorID = 1, Title="Ötödik könyv" },
-                new Book { ISBN = "6666666666666", AuthorID = 1, Title="Hatodik" }
+                new Book { ISBN = "1111111111111", AuthorID = 1, Title="Ez egy könyv cím", Publisher="Egy kiadó", Subject="scifi", PubDate=2005},
+                new Book { ISBN = "2222222222222", AuthorID = 1, Title="Másik könyv cím", Publisher="Kettő kiadó", Subject="sci-fi", PubDate=2005},
+                new Book { ISBN = "333333333", AuthorID = 1, Title="Harmadik cím", Publisher="Három kiadó", Subject="krimi", PubDate=2005},
+                new Book { ISBN = "4444444444444", AuthorID = 1, Title="Negyedik könyvnek a címe", Publisher="Négy kiadó", Subject="tudományos", PubDate=2005},
+                new Book { ISBN = "5555555555555", AuthorID = 1, Title="Ötödik könyv", Publisher="Ötödik kiadó", Subject="scifi", PubDate=2005},
+                new Book { ISBN = "6666666666666", AuthorID = 1, Title="Hatodik", Publisher="Hatodik kiadó", Subject="sci-fi", PubDate=2005}
             };
         }
 
