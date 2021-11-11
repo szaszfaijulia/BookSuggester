@@ -10,11 +10,6 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddBookCommand}" />
     </ContentPage.ToolbarItems>
-    <!-- <ContentPage.Content>
-        <SearchBar>
-            
-        </SearchBar>
-    </ContentPage.Content> -->
 
     <Grid>
         <StackLayout>
@@ -22,7 +17,7 @@
                 
             </SearchBar>
         </StackLayout>
-        <StackLayout>
+        <StackLayout Padding="20,60,20,20">
         <RefreshView x:DataType="local:ReadedBooksViewModel" Command="{Binding LoadBooksCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
             <CollectionView x:Name="ItemsListView"
                     ItemsSource="{Binding Books}"
