@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:BookSuggester.ViewModels"
+             x:Class="BookSuggester.Views.SearchPage"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:SearchViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#e6fff9</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Padding="25,10,35,0" Orientation="Horizontal" VerticalOptions="Start">
+                <Label Padding="0,17,0,0" Text="Cím:"/>
+                <Entry HorizontalOptions="FillAndExpand" Placeholder="Cím"/>
+            </StackLayout>
+            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+                <Label Padding="0,17,0,0" Text="Szerző:"/>
+                <Entry HorizontalOptions="FillAndExpand" Placeholder="Szerző"/>
+            </StackLayout>
+            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+                <Label Padding="0,17,0,0" Text="Kiadó:"/>
+                <Entry HorizontalOptions="FillAndExpand" Placeholder="Kiadó"/>
+            </StackLayout>
+            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+                <Label Padding="0,17,0,0" Text="Műfaj:"/>
+                <!-- <Picker HorizontalOptions="FillAndExpand" Title="Válassz műfajt" TitleColor="black" ItemsSource="{Binding Mo}" ItemDisplayBinding="{Binding Na}" /> -->
+                <Entry HorizontalOptions="FillAndExpand" Placeholder="Műfaj"/>
+            </StackLayout>
+            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+                <Label Padding="0,17,0,0" Text="ISBN:"/>
+                <Entry HorizontalOptions="FillAndExpand" Placeholder="ISBN"/>
+            </StackLayout>
+            <StackLayout Padding="25,-5,25,5" HorizontalOptions="EndAndExpand">
+                <Button CornerRadius="10" WidthRequest="150" HeightRequest="35"
+                        Text="Keresés" Clicked="SearchButton_Clicked"/>
+            </StackLayout>
+
+            <Line Stroke="#9fdfbf" Margin="0" StrokeThickness="2" X1="2000" X2="1" Y1="0" Y2="0"/>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,10,30,24" Spacing="5">
+                <Label Text="..." FontSize="Title"/>
+                <Label Text="..." FontSize="14" Padding="0,-2,0,0"/>
+                <Label FontSize="16" Padding="0,20,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="... "/>
+                                <Span Text="..." FontAttributes="Bold"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                    <!-- DataBinding! -->
+                    <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                    <!-- DataBinding! -->
+                    <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                    <!-- DataBinding! -->
+                </StackLayout>
+                <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                <Button Margin="0,10,0,0" Text="Érdekel"
+                            Command="{Binding OpenWebCommand}" 
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White" />
+                
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

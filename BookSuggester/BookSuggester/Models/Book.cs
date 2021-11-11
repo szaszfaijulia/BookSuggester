@@ -7,7 +7,8 @@ namespace BookSuggester.Models
         public string ISBN { get; set; }
         public int AuthorID { get; set; }
         public string Title { get; set; }
-        public int GenreID { get; set; }
+        public string Publisher { get; set; }
+        public string Subject { get; set; }
         public int PubDate { get; set; }
         //public bool IsReaded { get; set; }
         //public bool IsSaved { get; set; }

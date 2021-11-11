@@ -12,7 +12,8 @@ namespace BookSuggester.ViewModels
         private string isbn;
         private int authorid;
         private string title;
-        private int genreid;
+        private string publisher;
+        private string subject;
         private int pubdate;
         public string ISBN { get; set; }
 
@@ -27,10 +28,15 @@ namespace BookSuggester.ViewModels
             get => title;
             set => SetProperty(ref title, value);
         }
-        public int GenreID
+        public string Publisher
         {
-            get => genreid;
-            set => SetProperty(ref genreid, value);
+            get => publisher;
+            set => SetProperty(ref publisher, value);
+        }
+        public string Subject
+        {
+            get => subject;
+            set => SetProperty(ref subject, value);
         }
         public int PubDate
         {
@@ -59,7 +65,8 @@ namespace BookSuggester.ViewModels
                 ISBN = book.ISBN;
                 AuthorID = book.AuthorID;
                 Title = book.Title;
-                GenreID = book.GenreID;
+                Publisher = book.Publisher;
+                Subject = book.Subject;
                 PubDate = book.PubDate;
             }
             catch (Exception)
