@@ -91,7 +91,7 @@
         <ShellContent Route="ReadedBooksPage" ContentTemplate="{DataTemplate local:ReadedBooksPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Mentett könyvek" Icon="icon_feed.png">
-        <ShellContent Route="SavedBooksPage" ContentTemplate="{DataTemplate local:SavedBooksPage}" />
+        <ShellContent Route="ReadedBooksPage" ContentTemplate="{DataTemplate local:ReadedBooksPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Keresés" Icon="icon_feed.png" >
         <ShellContent Route="SearchPage" ContentTemplate="{DataTemplate local:SearchPage}" />

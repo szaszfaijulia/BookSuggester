@@ -8,7 +8,8 @@
              x:Name="BrowseBooksPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddBookCommand}" />
+        <!-- <ToolbarItem Text="Add" Command="{Binding AddBookCommand}" /> -->
+        <!-- rendezés  dátum / szerző / cím / kiadás éve  szerint-->
     </ContentPage.ToolbarItems>
 
     <Grid>
@@ -34,7 +35,7 @@
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                            <Label Text="{Binding AuthorID}" 
+                            <Label Text="{Binding Author}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />

@@ -2,10 +2,7 @@
 using System;
 using System.Collections.Generic;
 using BookSuggester.Models;
-using BookSuggester.ViewModels;
 using BookSuggester.Views;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;

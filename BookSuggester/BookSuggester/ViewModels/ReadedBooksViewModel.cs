@@ -14,7 +14,7 @@ namespace BookSuggester.ViewModels
 
         public ObservableCollection<Book> Books { get; }
         public Command LoadBooksCommand { get; }
-        public Command AddBookCommand { get; }
+        //public Command AddBookCommand { get; }
         public Command<Book> BookTapped { get; }
 
         public ReadedBooksViewModel()
@@ -25,7 +25,7 @@ namespace BookSuggester.ViewModels
 
             BookTapped = new Command<Book>(OnBookSelected);
 
-            AddBookCommand = new Command(OnAddBook);
+            //AddBookCommand = new Command(OnAddBook);
         }
 
         async Task ExecuteLoadBooksCommand()
@@ -67,10 +67,10 @@ namespace BookSuggester.ViewModels
             }
         }
 
-        private async void OnAddBook(object obj)
+        /*private async void OnAddBook(object obj)
         {
             await Shell.Current.GoToAsync(nameof(NewItemPage));
-        }
+        }*/
 
         async void OnBookSelected(Book book)
         {

@@ -10,17 +10,17 @@ namespace BookSuggester.ViewModels
     class BookDetailViewModel : BaseViewModel
     {
         private string isbn;
-        private int authorid;
+        private string author;
         private string title;
         private string publisher;
         private string subject;
         private int pubdate;
         public string ISBN { get; set; }
 
-        public int AuthorID
+        public string Author
         {
-            get => authorid;
-            set => SetProperty(ref authorid, value);
+            get => author;
+            set => SetProperty(ref author, value);
         }
 
         public string Title
@@ -63,7 +63,7 @@ namespace BookSuggester.ViewModels
             {
                 var book = await DataStore.GetBookAsync(bookId);
                 ISBN = book.ISBN;
-                AuthorID = book.AuthorID;
+                Author = book.Author;
                 Title = book.Title;
                 Publisher = book.Publisher;
                 Subject = book.Subject;
