@@ -23,7 +23,7 @@ namespace BookSuggester.Services
 
             await db.CreateTableAsync<Book>(); //tábla létrehozása
         }
-        public static async Task AddBook(string isbn, string author, string title, string publisher, string subject, int pubdate) //isbn, szerző, cím, műfaj, kiadó, kiadás éve, kép??                                                            
+        /*public static async Task AddBook(string isbn, string author, string title, string publisher, string subject, int pubdate) //isbn, szerző, cím, műfaj, kiadó, kiadás éve, kép??                                                            
         {
             await Init();
             var book = new Book
@@ -37,8 +37,8 @@ namespace BookSuggester.Services
             };
 
             var id = await db.InsertAsync(book);
-        }
-        public static async Task AddBook(string isbn, string author, string title)                                                            
+        }*/
+        public static async Task AddBook(string isbn, string author, string title)
         {
             await Init();
             var book = new Book
@@ -48,7 +48,7 @@ namespace BookSuggester.Services
                 Title = title
             };
 
-            var id = await db.InsertAsync(book);
+            /*var id = */await db.InsertAsync(book);
         }
         public static async Task RemoveBook(int id)
         {
@@ -61,6 +61,8 @@ namespace BookSuggester.Services
             await Init();
 
             var book = await db.Table<Book>().ToListAsync();
+            foreach (var s in book)
+                Console.WriteLine("ISBN: " + s.ISBN);
             return book;
         }
     }

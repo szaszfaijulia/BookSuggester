@@ -39,7 +39,7 @@
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                            <Label Text="{Binding Publisher}" 
+                            <!-- Label Text="{Binding Publisher}" 
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
@@ -50,8 +50,8 @@
                             <Label Text="{Binding PubDate}" 
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <StackLayout.GestureRecognizers>
+                                FontSize="16" />  -->
+                                <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer 
                                     NumberOfTapsRequired="1"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type local:ReadedBooksViewModel}}, Path=ItemTapped}"		

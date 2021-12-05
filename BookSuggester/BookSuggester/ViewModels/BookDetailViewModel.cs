@@ -65,9 +65,9 @@ namespace BookSuggester.ViewModels
                 ISBN = book.ISBN;
                 Author = book.Author;
                 Title = book.Title;
-                Publisher = book.Publisher;
+                /*Publisher = book.Publisher;
                 Subject = book.Subject;
-                PubDate = book.PubDate;
+                PubDate = book.PubDate;*/
             }
             catch (Exception)
             {

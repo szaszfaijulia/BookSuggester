@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookSuggester.Views.SavdBooksPage"
+             Title="{Binding Title}"
+             xmlns:viewmodels="clr-namespace:BookSuggester.ViewModels"  
+             xmlns:model="clr-namespace:BookSuggester.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:DataType="viewmodels:SavdBooksViewModel"
+             x:Name="SavedBPage">
+    <ContentPage.BindingContext>
+        <viewmodels:SavdBooksViewModel/>
+    </ContentPage.BindingContext>
+    <!-- <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ItemSelectedEventArgsConverter x:Key="ItemselectedEventArgsConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources> -->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddCommand}" /> <!-- itt a Google Books API-ból lekért adatok mehetnek bele -->
+        <!-- rendezés  dátum / szerző / cím  szerint-->
+    </ContentPage.ToolbarItems>
+
+    <ListView
+        BackgroundColor="Transparent"
+        CachingStrategy="RecycleElement"
+        IsGroupingEnabled="True"
+        IsPullToRefreshEnabled="True"
+        IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+        ItemsSource="{Binding Book}"
+        RefreshCommand="{Binding RefreshCommand}"
+        SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="model:Book">
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem
+                            Command="{Binding Source={x:Reference SavdBookPage}, Path=BindingContext.DeleteCommand}"
+                            CommandParameter="{Binding .}"
+                            Text="Delete" />
+                        <MenuItem IsDestructive="True" Text="Delete" />
+                    </ViewCell.ContextActions>
+                    <Grid Padding="10">
+                        <Frame CornerRadius="20" HasShadow="True">
+                            <StackLayout Orientation="Horizontal">
+                                <!-- <Image Source="{Binding Image}" WidthRequest="66" /> -->
+                                <StackLayout VerticalOptions="Center">
+                                    <Label
+                                        FontSize="Large"
+                                        Text="{Binding ISBN}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontSize="Large"
+                                        Text="{Binding Title}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontSize="Large"
+                                        Text="{Binding Author}"
+                                        VerticalOptions="Center" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <!-- <Grid>
+        <StackLayout Padding="20,20,20,20">
+            <RefreshView x:DataType="viewmodels:SavdBooksViewModel" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView x:Name="ItemsListView"
+                    ItemsSource="{Binding Book}"
+                    SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" x:DataType="model:Book">
+                                <Label Text="{Binding ISBN}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                <Label Text="{Binding Title}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                <Label Text="{Binding Author}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                <Label Text="{Binding Publisher}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" /> 
+                            <Label Text="{Binding Subject}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                            <Label Text="{Binding PubDate}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />  
+                                <Button Margin="0,10,0,0" Text="Törlés" Command="{Binding Id}"
+                                        BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </Grid> -->
+
+</ContentPage>
