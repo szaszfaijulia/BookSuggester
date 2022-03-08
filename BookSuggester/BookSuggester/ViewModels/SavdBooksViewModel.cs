@@ -15,30 +15,18 @@ namespace BookSuggester.ViewModels
     public class SavdBooksViewModel : BaseViewModel
     {
         public ObservableRangeCollection<Book> Book { get; set; }
-        //public ObservableRangeCollection<Grouping<string, Book>> BookGroups { get; }
         public AsyncCommand RefreshCommand { get; }
         public AsyncCommand AddCommand { get; }
         public AsyncCommand<Book> RemoveCommand { get; }
-        //public AsyncCommand<Book> SelectedCommand { get; }
 
         public SavdBooksViewModel()
         {
             Title = "Mentett könyvek";
             Book = new ObservableRangeCollection<Book>();
-            //LoadBookCommand = new Command(async () => await ExecuteLoadBooksCommand());
-
-            //BookTapped = new Command<Book>(OnBookSelected);
-
-            Book = new ObservableRangeCollection<Book>();
-            //BookGroups = new ObservableRangeCollection<Grouping<string, Book>>();
-
 
             RefreshCommand = new AsyncCommand(Refresh);
             AddCommand = new AsyncCommand(Add);
             RemoveCommand = new AsyncCommand<Book>(Remove);
-            //SelectedCommand = new AsyncCommand<Book>(Selected);
-
-            //bookService = DependencyService.Get<BookService>();
         }
         async Task Add()
         {
@@ -53,28 +41,17 @@ namespace BookSuggester.ViewModels
             await Refresh();
         }
 
-        async Task Selected(Book book)
-        {
-            if (book == null)
-                return;
-
-            var route = $"{nameof(ItemDetailPage)}?BookId={book.Id}";
-            await Shell.Current.GoToAsync(route);
-        }
-
-        async Task Remove(Book book)
+        public async Task Remove(Book book)
         {
             await BookService.RemoveBook(book.Id);
             await Refresh();
         }
 
-        async Task Refresh()
+        public async Task Refresh()
         {
             IsBusy = true;
 
-//#if DEBUG
-//            await Task.Delay(500);
-//#endif
+            //await Task.Delay(500);
 
             Book.Clear();
 

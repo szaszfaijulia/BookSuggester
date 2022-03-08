@@ -23,10 +23,29 @@ namespace BookSuggester.Views
             InitializeComponent();
             BindingContext = _viewModel = new SavdBooksViewModel();
         }
-
-        /*private async void Button_Clicked(object sender, EventArgs e)
+        protected override async void OnAppearing()
         {
-            await BookService.RemoveBook(id);
-        }*/
+            base.OnAppearing();
+
+            await _viewModel.Refresh();
+        }
+
+        //private async void Delete_Button_Clicked(object sender, EventArgs e) //könyv törlése  // NEM KELL
+        //{
+            /*Button selectedItem = (Button)sender;
+            var id = selectedItem.CommandParameter.ToString();
+            await SavdBooksViewModel.Remove(id);*/
+
+            /*Button button = (Button)sender;
+            string buttonId = button.ID;*/
+
+            /*Button EditButton = (Button)e.Source;
+            int id = Convert.ToInt32(EditButton.Tag);
+            //do your stuff */
+
+            //await BookService.RemoveBook(id);
+            //await SavdBooksViewModel.Remove(book);
+
+        //}
     }
 }

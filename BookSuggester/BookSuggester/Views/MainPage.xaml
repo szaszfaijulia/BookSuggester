@@ -27,50 +27,128 @@
                 </ContentView>
             </StackLayout>
         </StackLayout> -->
-        <StackLayout Orientation="Vertical" Padding="30,14,30,24" Spacing="0">
-            <Label Text="Ajánlatok" FontSize="Title"/>
-                <Label Text="Olvasott könyvek alapján" FontSize="14" Padding="0,0,0,10"/>
-                <!-- <Label FontSize="16" Padding="0,20,0,0">
-                    <Label.FormattedText>
-                        <Form>
-                            <FormattedString.Spans>
-                                <Span Text="... "/>
-                                <Span Text="..." FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label> -->
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Label Text="Egy könyvcím" 
+        <StackLayout>
+            <Label Padding="20,10,10,0" Text="Ajánlatok" FontSize="Title"/>
+            <!-- <Label Padding="20,0,10,0" Text="Olvasott könyvek alapján" FontSize="14"/> -->
+            <StackLayout Orientation="Horizontal" Padding="30,0,30,10" Spacing="20">
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                    <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                    <Label Text="Gyilkosság az Orient expresszen" 
                        LineBreakMode="WordWrap"  
                        FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap" 
+                    <Label Text="Agatha Christie" 
+                       LineBreakMode="WordWrap"  
+                       FontSize="14" />
+                    <Button Text="Érdekel" Command="{Binding .}" HeightRequest="35"
+                        BackgroundColor="{StaticResource Primary}" TextColor="White" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                    <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                    <Label Text="Gyilkosság az Orient expresszen" 
+                       LineBreakMode="WordWrap"  
                        FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap"
+                    <Label Text="Agatha Christie" 
+                       LineBreakMode="WordWrap"  
+                       FontSize="14" />
+                    <Button Text="Érdekel" Command="{Binding .}" HeightRequest="35"
+                        BackgroundColor="{StaticResource Primary}" TextColor="White" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                    <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                    <Label Text="Gyilkosság az Orient expresszen" 
+                       LineBreakMode="WordWrap"  
                        FontSize="16" />
+                    <Label Text="Agatha Christie" 
+                       LineBreakMode="WordWrap"  
+                       FontSize="14" />
+                    <Button Text="Érdekel" Command="{Binding .}" HeightRequest="35"
+                        BackgroundColor="{StaticResource Primary}" TextColor="White" />
+                </StackLayout>
             </StackLayout>
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                        Command="{Binding .}" 
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-                <!-- DataBinding! -->
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                        Command="{Binding .}" 
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-                <!-- DataBinding! -->
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                        Command="{Binding .}" 
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-                <!-- DataBinding! -->
-            </StackLayout>
-        </StackLayout>
+    </StackLayout>
         <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,14,30,24" Spacing="25"> <!-- Grid.Row="1" -->
+            <Frame Margin="10,0,10,10" Padding="0,0,0,0" CornerRadius="10" HasShadow="true" BorderColor="Gray" >
+                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="10">
+                    <Label Text="Jelenlegi olvasmány(ok)" FontSize="22"/>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0">
+                        <StackLayout Orientation="Vertical" Padding="5">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="0">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,-10,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,10,0,0" Text="Elolvastam"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                                <Button Margin="0,10,0,0" Text="Törlés"
+                                                BackgroundColor="DarkRed" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0">
+                        <StackLayout Orientation="Vertical" Padding="5">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="0">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,-10,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,10,0,0" Text="Elolvastam"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                                <Button Margin="0,10,0,0" Text="Törlés"
+                                                BackgroundColor="DarkRed" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0">
+                        <StackLayout Orientation="Vertical" Padding="5">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="0">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,-10,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,10,0,0" Text="Elolvastam"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                                <Button Margin="0,10,0,0" Text="Törlés"
+                                                BackgroundColor="DarkRed" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0">
+                        <StackLayout Orientation="Vertical" Padding="5">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="0">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,-10,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,10,0,0" Text="Elolvastam"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                                <Button Margin="0,10,0,0" Text="Törlés"
+                                                BackgroundColor="DarkRed" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <!--<StackLayout Orientation="Vertical" Padding="30,14,30,24" Spacing="25">
                 <Label Text="Jelenlegi olvasmány(ok)" FontSize="20"/>
 
                 <Label Text="Egy könyvcím" 
@@ -85,31 +163,7 @@
                 <Label Text="Egy könyvcím" 
                        LineBreakMode="WordWrap"  
                        FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap" 
-                       FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap"
-                       FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap"  
-                       FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap" 
-                       FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap"
-                       FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap"  
-                       FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap" 
-                       FontSize="16" />
-                <Label Text="Egy könyvcím" 
-                       LineBreakMode="WordWrap"
-                       FontSize="16" />
-            </StackLayout>
+            </StackLayout> -->
         </ScrollView>
         
     </Grid>

@@ -18,47 +18,62 @@
                 
             </SearchBar>
         </StackLayout>
-        <StackLayout Padding="20,60,20,20">
+        <StackLayout Padding="20,60,20,0">
         <RefreshView x:DataType="local:ReadedBooksViewModel" Command="{Binding LoadBooksCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <CollectionView x:Name="ItemsListView"
-                    ItemsSource="{Binding Books}"
-                    SelectionMode="None">
+            <CollectionView x:Name="ItemsListView" ItemsSource="{Binding Books}" SelectionMode="None">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10" x:DataType="model:Book">
-                            <Label Text="{Binding ISBN}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding Title}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding Author}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                            <!-- Label Text="{Binding Publisher}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding Subject}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding PubDate}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />  -->
-                                <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                    NumberOfTapsRequired="1"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:ReadedBooksViewModel}}, Path=ItemTapped}"		
-                                    CommandParameter="{Binding .}">
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
+                            <Frame Margin="-10,0,-10,-10" Padding="-10,-10,-10,-10" CornerRadius="10" HasShadow="true" BorderColor="Gray" >
+                                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="10">
+                                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="10">
+                                        <StackLayout Orientation="Vertical" Padding="10">
+                                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                                        </StackLayout>
+                                        <StackLayout  Orientation="Vertical" Padding="10">
+                                            <Label Text="Gyilkosság az Orient expresszen"
+                                                    Style="{DynamicResource ListItemTextStyle}" 
+                                                    FontSize="18" />
+                                            <Label Text="Agatha Christie"
+                                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                                    FontSize="14" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
                         </StackLayout>
+                        <!-- <Label Text="{Binding ISBN}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding Title}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding Author}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        Label Text="{Binding Publisher}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding Subject}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding PubDate}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />  
+                            <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ReadedBooksViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>-->
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

@@ -11,97 +11,121 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#e6fff9</Color>
+            <Color x:Key="Accent">#ffff</Color> <!-- e6fff9 --> <!-- BackgroundColor="{StaticResource Accent}"-->
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
+    <Grid BackgroundColor="#eeee">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Padding="25,10,35,0" Orientation="Horizontal" VerticalOptions="Start">
+        <Frame HasShadow="true">
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" >
+            <StackLayout Padding="10,-10,15,0" Orientation="Horizontal" VerticalOptions="Start">
                 <Label Padding="0,17,0,0" Text="Cím:"/>
                 <Entry HorizontalOptions="FillAndExpand" Placeholder="Cím"/>
             </StackLayout>
-            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+            <StackLayout Padding="10,-20,15,0" Orientation="Horizontal" VerticalOptions="Start">
                 <Label Padding="0,17,0,0" Text="Szerző:"/>
                 <Entry HorizontalOptions="FillAndExpand" Placeholder="Szerző"/>
             </StackLayout>
-            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+            <StackLayout Padding="10,-20,15,0" Orientation="Horizontal" VerticalOptions="Start">
                 <Label Padding="0,17,0,0" Text="Kiadó:"/>
                 <Entry HorizontalOptions="FillAndExpand" Placeholder="Kiadó"/>
             </StackLayout>
-            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+            <StackLayout Padding="10,-20,15,0" Orientation="Horizontal" VerticalOptions="Start">
                 <Label Padding="0,17,0,0" Text="Műfaj:"/>
                 <!-- <Picker HorizontalOptions="FillAndExpand" Title="Válassz műfajt" TitleColor="black" ItemsSource="{Binding Mo}" ItemDisplayBinding="{Binding Na}" /> -->
                 <Entry HorizontalOptions="FillAndExpand" Placeholder="Műfaj"/>
             </StackLayout>
-            <StackLayout Padding="25,-20,35,0" Orientation="Horizontal" VerticalOptions="Start">
+            <StackLayout Padding="15,-20,15,0" Orientation="Horizontal" VerticalOptions="Start">
                 <Label Padding="0,17,0,0" Text="ISBN:"/>
                 <Entry HorizontalOptions="FillAndExpand" Placeholder="ISBN"/>
             </StackLayout>
-            <StackLayout Padding="25,-5,25,5" HorizontalOptions="EndAndExpand">
-                <Button CornerRadius="10" WidthRequest="150" HeightRequest="35"
-                        Text="Keresés" Clicked="SearchButton_Clicked"/>
-            </StackLayout>
-
-            <Line Stroke="#9fdfbf" Margin="0" StrokeThickness="2" X1="2000" X2="1" Y1="0" Y2="0"/>
-        </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,10,30,24" Spacing="5">
-                <Label Text="..." FontSize="Title"/>
-                <Label Text="..." FontSize="14" Padding="0,-2,0,0"/>
-                <Label FontSize="16" Padding="0,20,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="... "/>
-                                <Span Text="..." FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                    <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                    <!-- DataBinding! -->
-                    <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                    <!-- DataBinding! -->
-                    <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                    <!-- DataBinding! -->
+                <StackLayout Padding="15,0,15,-10" HorizontalOptions="EndAndExpand">
+                    <Button CornerRadius="10" WidthRequest="150" HeightRequest="35"
+                    Text="Keresés" Clicked="SearchButton_Clicked"/>
                 </StackLayout>
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                <Button Margin="0,10,0,0" Text="Érdekel"
-                            Command="{Binding OpenWebCommand}" 
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
                 
-            </StackLayout>
+                <!-- <Line Stroke="#9fdfbf" Margin="0" StrokeThickness="2" X1="2000" X2="1" Y1="0" Y2="0"/> -->
+        </StackLayout>
+        </Frame>
+        <ScrollView Grid.Row="1" BackgroundColor="LightGoldenrodYellow">
+            <Frame Margin="10,10,10,10" Padding="0,0,0,10" CornerRadius="10" HasShadow="true" BorderColor="Gray" >
+                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="10">
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="10">
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="10">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,0,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,5,10,0" Text="Tovább"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                                <Button Margin="0,5,0,0" Text="Mentés"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="10">
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="10">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,10,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,10,0,0" Text="Érdekel"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="10">
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="10">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,10,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,10,0,0" Text="Érdekel"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="10">
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Image Source="https://s04.static.libri.hu/cover/a2/d/4072521_5.jpg" WidthRequest="80" />
+                        </StackLayout>
+                        <StackLayout  Orientation="Vertical" Padding="10">
+                            <Label Text="Gyilkosság az Orient expresszen"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="18" />
+                            <Label Text="Agatha Christie"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="14" />
+                            <StackLayout Padding="-5,10,10,0" Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Margin="0,10,0,0" Text="Érdekel"
+                                                BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
         </ScrollView>
     </Grid>
 </ContentPage>
